@@ -1,19 +1,27 @@
-multiplicando:
-for (let i = 0; i < 2;) {
-    i++;
-    multiplicador:
-    for (let g = 0; g < 10;) {
-        g++;
-        // if(g%2==0){
-        //     console.log(`${i} X ${g} = ${i * g}`);
-        //     continue multiplicando;
-        // }
-        document.body.insertAdjacentHTML("beforeend", `
-            ${i} X ${g} = ${i * g} <br>
-        `);
+let array = ["Miguel","Jose","Oscar"];
+let obj = [
+    {
+        Profesor: "Miguel"
+    },
+    {
+        Alumno1: "Oscar"
+    },
+    {
+        Alumno2: "Jose"
     }
-    document.body.insertAdjacentHTML("beforeend", "<hr>");
+]
+console.log(Object.keys(obj));
+console.log(Object.values(obj));
+console.log(Object.entries(obj));
+
+for(let data of Object.values(obj)){
+
+    document.body.insertAdjacentHTML("beforeend", `
+        <b>${Object.keys(data)}</b> : ${Object.values(data)} <br>
+    `);
+
 }
+document.body.insertAdjacentHTML("beforeend","<hr>");
 
 
 
@@ -22,10 +30,12 @@ for (let i = 0; i < 2;) {
 
 
 
-// let array = ["Miguel", "Oscar", "Jose"];
-// for (let i = 0; i < array.length; i++) {
-//     document.body.insertAdjacentHTML("beforeend", "<br>"+array[i]);
-// }
+for(let id in array){
+    document.body.insertAdjacentHTML("beforeend", `
+    ${id} <br>
+    `);
+}
+document.body.insertAdjacentHTML("beforeend","<hr>");
 
 
 
@@ -33,24 +43,8 @@ for (let i = 0; i < 2;) {
 
 
 
-
-
-
-
-
-
-// bandera = true;
-// let fn = () => {
-//     bandera = false; 
-//     return '';
-// };
-// let i = (()=>{
-//     let i = 1;
-//     return () => i++;
-// })();
-// for(null; bandera;){
-//     let I = i();
-//     document.body.append((I<=10) ? I : fn());
-// }
-
-
+for(let value of array){
+    document.body.insertAdjacentHTML("beforeend", `
+    ${value} <br>
+    `);
+}
